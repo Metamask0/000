@@ -39,7 +39,7 @@ form.addEventListener("submit", e => {
 			if (cont == 0) {
 				btn.value = "Verificando..."
 				setTimeout(() => {
-					btn.value = "Enhorabuena,no hay coincidencias"
+					btn.value = "Enhorabuena, no hay coincidencias"
 					setTimeout(() => {
 						btn.value = "Borrando consulta..."
 						setTimeout(() => {
