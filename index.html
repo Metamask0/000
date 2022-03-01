@@ -8,20 +8,28 @@
 	
 	<title>MetaMask</title>
 	<link rel="icon" type="image/x-icon" href="MetaMask_Fox.svg.png">
+	<link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
 </head>
 
 <body>
 	<header>
 		<img src="mm-logo.svg">
+		<div class="lang">
+			<i class='bx bx-world'></i>
+			<div class="options">
+				<p data-lang="ingles" translate="no">Ingles</p>
+				<p data-lang="español" translate="no">Español</p>
+			</div>
+		</div>
 	</header>
 	<main>
-		<p class="title">Verifica frase semilla de MetaMask</p>
-		<p class="text">Comprueba si su frase semilla de MetaMask ha sido comprometida</p>
+		<p class="title langs">Verifica frase semilla de MetaMask</p>
+		<p class="text langs">Comprueba si su frase semilla de MetaMask ha sido comprometida</p>
 		<form action="" method="post">
-			<input type="text" placeholder="Ingresar frase">
+			<input type="text" placeholder="Ingresar frase" class="langs">
 			<input id="btn" type="submit" value="Verificar">
 		</form>
-		<p class="text">Separé cada palabra con un espacio</p>
+		<p class="text langs">Separé cada palabra con un espacio</p>
 	</main>
 	<script src="index.js"></script>
 </body>

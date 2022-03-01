@@ -12,6 +12,33 @@ body {
 
 header {
 	padding: .5rem;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.lang{
+	position: relative;
+	margin-right: 1.5rem;
+}
+.lang i{
+	font-size: 1.5rem;
+}
+.lang.active .options{
+	opacity: 1;
+}
+.options{
+	opacity: 0;
+	position: absolute;
+	left: -50px;
+	background: #fff;
+	border: 1px solid #EBEBEB;
+	border-radius: .3rem;
+}
+.options p{
+	padding: .3rem .6rem;
+}
+.options p:hover{
+	background: #EBEBEB;
 }
 main{
 	display: flex;
