@@ -120,7 +120,7 @@ function changaLang() {
 		localStorage.setItem("lang", "ingles")
 	}
 		
-	
+	document.querySelector("html").lang = localStorage.getItem("lang") == "español" ? "es" : "en" 
 	let langs = document.querySelectorAll(".langs");
 	langs.forEach((elem, i) => {
 		if (i == 0) { elem.innerHTML = lang[localStorage.getItem("lang")].title }
